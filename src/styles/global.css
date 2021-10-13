@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body,
+#app{
+  height: 100%;
+}
+
+/*Scroll*/
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+  background-color: rgba(122, 122, 122, 0.6);
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(000, 000, 000, 0.7);
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Theme Dark */
+.theme-dark ::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.theme-dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6);
+}

@@ -1,0 +1,3 @@
+360 w = Celulares
+1024 w = Tablets
+1440 w = Desktops
