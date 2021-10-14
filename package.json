@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --mode production"
+    "build": "node ./scripts/create-env.js && webpack --mode production"
   },
   "keywords": [],
   "author": "",
