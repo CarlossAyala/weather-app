@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   // APP ENTRY POINT
@@ -44,6 +45,7 @@ module.exports = {
       favicon: path.resolve(__dirname, 'src', 'assets/icon-page.png'),
     }),
     new MiniCssExtractPlugin(),
+    new Dotenv(),
   ],
   optimization: {
     minimize: true,
