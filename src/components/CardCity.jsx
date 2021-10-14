@@ -2,14 +2,14 @@ import React from 'react';
 import '../styles/CardCity.css';
 
 const CardCity = ({ infoWeather }) => {
-  const nameCity = infoWeather.length > 0 ? infoWeather[1].name : null;
-  const srcImg = infoWeather.length > 0 ? infoWeather[2].weather_icons[0] : null;
-  const temp = infoWeather.length > 0 ? infoWeather[2].temperature : null;
-  const weatherInfo = infoWeather.length > 0 ? infoWeather[2].weather_descriptions.join(' - ') : null;
-  const term = infoWeather.length > 0 ? infoWeather[2].feelslike : null;
-  const windSpeed = infoWeather.length > 0 ? infoWeather[2].wind_speed : null;
-  const hum = infoWeather.length > 0 ? infoWeather[2].humidity : null;
-  const vis = infoWeather.length > 0 ? infoWeather[2].visibility : null;
+  const nameCity = infoWeather[1].name;
+  const srcImg = infoWeather[2].weather_icons[0];
+  const temp = infoWeather[2].temperature;
+  const weatherInfo = infoWeather[2].weather_descriptions.join(' - ');
+  const term = infoWeather[2].feelslike;
+  const windSpeed = infoWeather[2].wind_speed;
+  const hum = infoWeather[2].humidity;
+  const vis = infoWeather[2].visibility;
 
   return (
     <div className='card-city'>
