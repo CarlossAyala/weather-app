@@ -4,9 +4,8 @@ import '../styles/MessageInfo.css';
 const MessageInfo = () => {
   return (
     <>
-      <div className='message-info'>Search your city to see the weather!</div>
-      <div className='message-info'>Make sure you write your city correctly, please</div>
-      <div className='message-info'>You can check the weather 5 times, attempts are reset in 1 hour</div>
+      <div className='message-info'>Busca tu ciudad para ver el estado del tiempo!</div>
+      <div className='message-info'>Asegurate de escribir tu ciudad correctamente, por favor!</div>
     </>
   );
 };

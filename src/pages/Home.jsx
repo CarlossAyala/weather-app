@@ -27,10 +27,16 @@ const Home = () => {
     fetch(httpRequest)
       .then((res) => res.json())
       .then((weather) => {
-        const newInfoWeather = [weather.request, weather.location, weather.current];
-        setInfoWeather(newInfoWeather);
-        saveInfoWeatherInLocalStorage(newInfoWeather);
-        console.log(newInfoWeather);
+        console.log('Here:');
+        console.log(weather);
+        if (weather.success === false) {
+          setInfoWeather([{ success: false }]);
+        }
+        if (weather.request) {
+          const newInfoWeather = [{ success: true }, weather.request, weather.location, weather.current];
+          setInfoWeather(newInfoWeather);
+          saveInfoWeatherInLocalStorage(newInfoWeather);
+        }
       })
       .catch((err) => console.log(err));
   }

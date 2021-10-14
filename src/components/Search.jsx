@@ -12,7 +12,7 @@ const Search = ({ city, setCity, handleSearchInfo }) => {
         onChange={(e) => setCity(e.target.value)}
         className='box-search--input'
         type='text'
-        placeholder='The weather in...'
+        placeholder='Ingrese su ciudad...'
       />
       <i className='bx bx-search box-search--icon' onClick={() => handleSearchInfo()} />
       {/* <i className='box-search--icon theme bx bxs-sun' /> */}
