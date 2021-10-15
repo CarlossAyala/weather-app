@@ -1,4 +1,3 @@
-/* const fs = require('fs');
+const fs = require('fs');
 
-fs.writeFileSync('./.env', `WEATHER_API_KEY=${process.env.WEATHER_API_KEY}\n`);
- */
+fs.writeFileSync('./.env', `WEATHER_API_KEY=${process.env.WEATHER_API_KEY}\n  LOCATION_API_KEY=${process.env.LOCATION_API_KEY}\n `);
