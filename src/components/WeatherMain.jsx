@@ -1,16 +1,16 @@
 import React from 'react';
 import CardCity from './CardCity';
 /* import WeatherWeek from './WeatherWeek'; */
-import '../styles/MessageInfo.css';
+import '../styles/WeatherMain.css';
+import Button from './Button';
 
-const WeatherMain = ({ infoWeather }) => {
-  const messageError = <div className='message-info'>Ciudad no encontrada, escríbela bien!</div>;
+const WeatherMain = ({ infoWeather, getInfoWeatherAPI }) => {
+  /* const messageError = <div className='message-info'>Ciudad no encontrada, escríbela bien!</div>; */
   return (
     <div className='weather-info'>
-      {
-        infoWeather[0].success ? <CardCity infoWeather={infoWeather} /> : messageError
-      }
-      {/* <WeatherWeek /> */}
+      <CardCity current={infoWeather.current} />
+      {/* <WeatherWeek daily={infoWeather.daily} /> */}
+      <Button getInfoWeatherAPI={getInfoWeatherAPI} />
     </div>
   );
 };

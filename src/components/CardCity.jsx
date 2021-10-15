@@ -1,19 +1,24 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import '../styles/CardCity.css';
 
-const CardCity = ({ infoWeather }) => {
-  const nameCity = infoWeather[2].name;
-  const srcImg = infoWeather[3].weather_icons[0];
-  const temp = infoWeather[3].temperature;
-  const weatherInfo = infoWeather[3].weather_descriptions.join(' - ');
-  const term = infoWeather[3].feelslike;
-  const windSpeed = infoWeather[3].wind_speed;
-  const hum = infoWeather[3].humidity;
-  const vis = infoWeather[3].visibility;
+const CardCity = ({ current }) => {
+  const codeImg = current.weather[0].icon;
+  const nameCity = 'Posadas';
+  const srcImg = `http://openweathermap.org/img/wn/${codeImg}@2x.png`;
+  const temp = Number.parseInt(current.temp, 10);
+  const weatherInfo = current.weather.map((item, index) => (
+    <span key={index + item.description} className='main--climate'>{item.description}</span>
+  ));
+  const term = Number.parseInt(current.feels_like, 10);
+  const windSpeed = Number.parseInt(current.wind_speed, 10);
+  const hum = current.humidity;
+  const clouds = Number.parseInt(current.clouds, 10);
 
   return (
     <div className='card-city'>
-      <div className='title-seccion'>Hoy</div>
       <div className='card-city--box'>
         <div className='card-city--header'>
           <i className='bx bxs-map header--icon' />
@@ -30,14 +35,14 @@ const CardCity = ({ infoWeather }) => {
             {temp}
             °
           </span>
-          <span className='main--climate'>{weatherInfo}</span>
+          {weatherInfo}
         </div>
         <div className='card-city--footer'>
           <div className='card-city--footer__box'>
             <div className='footer-info--box'>
               <i className='bx bxs-thermometer' />
               <span className='footer--info' translate='no'>
-                Term -
+                Térmica -
                 {' '}
                 {term}
                 °
@@ -49,7 +54,8 @@ const CardCity = ({ infoWeather }) => {
                 Wind -
                 {' '}
                 {windSpeed}
-                km/h
+                {' '}
+                m/s
               </span>
             </div>
           </div>
@@ -57,18 +63,18 @@ const CardCity = ({ infoWeather }) => {
             <div className='footer-info--box'>
               <i className='bx bx-droplet' />
               <span className='footer--info'>
-                Hum -
+                Humidity -
                 {' '}
                 {hum}
                 %
               </span>
             </div>
             <div className='footer-info--box'>
-              <i className='bx bx-show' />
+              <i className='bx bx-cloud' />
               <span className='footer--info'>
-                Vis -
+                Clouds -
                 {' '}
-                {vis}
+                {clouds}
                 %
               </span>
             </div>
