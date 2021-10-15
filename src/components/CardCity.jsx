@@ -51,7 +51,7 @@ const CardCity = ({ current }) => {
             <div className='footer-info--box'>
               <i className='bx bx-wind' />
               <span className='footer--info'>
-                Vieno -
+                Viento -
                 {' '}
                 {windSpeed}
                 {' '}
