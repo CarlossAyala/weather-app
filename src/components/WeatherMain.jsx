@@ -6,7 +6,6 @@ import Button from './Button';
 
 const WeatherMain = ({ infoWeather, getInfoWeatherAPI }) => {
   /* const messageError = <div className='message-info'>Ciudad no encontrada, escríbela bien!</div>; */
-  console.log(infoWeather);
   return (
     <div className='weather-info'>
       <CardCity current={infoWeather.current} />
