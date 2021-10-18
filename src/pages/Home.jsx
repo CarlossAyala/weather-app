@@ -39,10 +39,11 @@ const Home = () => {
 
   }, []);
 
-  /* async function handleSearchCity(city) {
+  async function handleSearchCity(city) {
     const cities = await getInfoCities(city);
-    setCities(cities); */
-  /* getDailyAndCurrentData(coord, setInfoWeather); */
+    setCities(cities);
+    /* getDailyAndCurrentData(coord, setInfoWeather); */
+  }
   //Notas
   /* {
     Object.keys(infoWeather).length > 0 ? 'infoWeather' : 'Cacio'
