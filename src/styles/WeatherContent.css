@@ -1,0 +1,66 @@
+.weather-main {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(5, min-content);
+  grid-template-areas: 
+  "title title"
+  "subtitle subtitle"
+  "infoclimate infoclimate"
+  "sideleft sideright";
+  column-gap: 20px;
+}
+.weather-main .title-2 {
+  grid-area: title;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #32325d;
+}
+.weather-main .title-3 {
+  grid-area: title;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #32325d;
+}
+.weather-main .subtitle-1 {
+  grid-area: subtitle;
+  margin-bottom: 5px;
+}
+.weather-main .sideleft {
+  grid-area: sideleft;
+  color: #32325d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sideleft--img {
+  width: 125px;
+}
+.sideleft--temp {
+  font-size: 5em;
+}
+.weather-main .sideright {
+  grid-area: sideright;
+  color: #32325d;
+  display: grid;
+  grid-template-areas: 
+  "."
+  "."
+  "."
+  "."
+  ".";
+}
+.sideright--item{
+  display: flex;
+  align-items: center;
+}
+.sideright .icon {
+  margin-right: 5px;
+}
+.weather-main .infoclimate {
+  grid-area: infoclimate;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}

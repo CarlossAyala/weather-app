@@ -1,0 +1,12 @@
+.card-item--day{
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.card-item--img {
+  width: 50px;
+  margin-bottom: 3px;
+}
+.card-item--temp{
+  font-size: 1.1em;
+}
+
