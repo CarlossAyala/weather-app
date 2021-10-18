@@ -1,5 +1,5 @@
 //Obtener la Lat y Long del usuario
-async function getLatLong(cb) {
+async function getLatLong() {
   let coordinates;
   const httpRequest = `https://freegeoip.app/json/?apikey=${process.env.LOCATION_API_KEY}`;
 
@@ -10,9 +10,6 @@ async function getLatLong(cb) {
       lat: info.latitude,
       lon: info.longitude,
     };
-    //Cargar datos iniciales?
-    cd(coordinates);
-
     return coordinates;
   } catch (error) {
     return (error);
