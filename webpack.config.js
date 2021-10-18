@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
@@ -55,6 +56,16 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new Dotenv(),
+    new CopyPlugin({
+      patterns: [
+        {
+          //Donde se encuentran los archivos
+          from: path.resolve(__dirname, 'src', 'assets/'),
+          //Hacia donde moverlos
+          to: 'assets/',
+        },
+      ],
+    }),
   ],
   optimization: {
     minimize: true,
