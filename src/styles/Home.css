@@ -6,3 +6,24 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.title-app {
+  grid-area: titleApp;
+}
+.search {
+  grid-area: searchInput;
+}
+.weather-main {
+  grid-area: currentWeather;
+}
+.today {
+  grid-area: today;
+}
+.this-week {
+  grid-area: thisWeek;
+}
+.other-cities {
+  grid-area: otherCities;
+}
+.footer {
+  grid-area: footer;
+}

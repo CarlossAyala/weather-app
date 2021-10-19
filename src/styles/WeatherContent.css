@@ -1,6 +1,6 @@
 .weather-main {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, min-content);
   grid-template-areas: 
   "title title"
@@ -8,6 +8,7 @@
   "infoclimate infoclimate"
   "sideleft sideright";
   color: #32325d;
+  column-gap: 15px;
 }
 .weather-main .title-2 {
   grid-area: title;
@@ -30,7 +31,7 @@
   grid-area: sideleft;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 .sideleft--img {
   width: 125px;
