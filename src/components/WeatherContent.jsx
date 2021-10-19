@@ -22,7 +22,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Térmica -
             {' '}
-            {`${currentInfo.feelsLikeTemp}°`}
+            <span translate='no'>{`${currentInfo.feelsLikeTemp}°`}</span>
           </span>
         </div>
         <div className='sideright--item'>
@@ -30,7 +30,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Viento -
             {' '}
-            {`${currentInfo.windSpeed}km/h`}
+            <span translate='no'>{`${currentInfo.windSpeed}km/h`}</span>
           </span>
         </div>
         <div className='sideright--item'>
