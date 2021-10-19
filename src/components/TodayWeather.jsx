@@ -11,7 +11,7 @@ const TodayWeather = ({ threeHourlyInfo }) => {
           threeHourlyInfo.length > 0 &&
           threeHourlyInfo.map((item) => (
             <div key={item.time} className='card--item'>
-              <span className='card-item--temp'>{`${item.temperature}°`}</span>
+              <span translate='no' className='card-item--temp'>{`${item.temperature}°`}</span>
               <img
                 className='card-item--img'
                 src={`https://developer.foreca.com/static/images/symbols/${item.symbol}.png`}

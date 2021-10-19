@@ -14,7 +14,7 @@ const WeatherContent = ({ currentInfo }) => {
           src={`https://developer.foreca.com/static/images/symbols/${currentInfo.symbol}.png`}
           alt='Info Icon Weather'
         />
-        <span className='sideleft--temp'>{`${currentInfo.temperature}°`}</span>
+        <span translate='no' className='sideleft--temp'>{`${currentInfo.temperature}°`}</span>
       </div>
       <div className='sideright'>
         <div className='sideright--item'>

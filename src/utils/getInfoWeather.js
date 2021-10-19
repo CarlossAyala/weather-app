@@ -172,7 +172,7 @@ export async function getOtherCitiesInfo() {
 
   const cities = [
     {
-      name: 'Nueva York, EE. UU.',
+      name: 'Nueva York, Estados Unidos',
       lon: -74.005973816,
       lat: 40.714267731,
       src: '../assets/bg-img-1.png',

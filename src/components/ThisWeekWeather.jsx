@@ -12,13 +12,13 @@ const ThisWeekWeather = ({ next12Days }) => {
           next12Days.map((day, index) => (
             <div key={day.date} className='card--item'>
               <span className='card-item--day'>{index === 0 ? 'Mañana' : getDayFormate(day.date) }</span>
-              <span className='subtitle-1'>{dayNumberMonthString(day.date)}</span>
+              <span translate='no' className='subtitle-1'>{dayNumberMonthString(day.date)}</span>
               <img
                 className='card-item--img'
                 src={`https://developer.foreca.com/static/images/symbols/${day.symbol}.png`}
                 alt='Icon info Weather'
               />
-              <span className='card-item--temp'>{`${day.maxTemp}°/${day.minTemp}°`}</span>
+              <span translate='no' className='card-item--temp'>{`${day.maxTemp}°/${day.minTemp}°`}</span>
             </div>
           ))
         }
