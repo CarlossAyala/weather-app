@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "react-dotenv && webpack --mode production"
+    "build": "node ./scripts/create-env.js && webpack --mode production"
   },
   "react-dotenv": {
     "whitelist": [
