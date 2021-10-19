@@ -22,7 +22,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Térmica -
             {' '}
-            {`${currentInfo.feelsLikeTemp}°`}
+            <span translate='no'>{`${currentInfo.feelsLikeTemp}°`}</span>
           </span>
         </div>
         <div className='sideright--item'>
@@ -30,8 +30,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Viento -
             {' '}
-            {`${currentInfo.windSpeed}`}
-            km/h
+            <span translate='no'>{`${currentInfo.windSpeed} km/h`}</span>
           </span>
         </div>
         <div className='sideright--item'>
@@ -39,8 +38,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Prob. Prec. -
             {' '}
-            {`${currentInfo.precipProb}`}
-            %
+            {`${currentInfo.precipProb}%`}
           </span>
         </div>
         <div className='sideright--item'>
@@ -48,8 +46,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Humedad -
             {' '}
-            {`${currentInfo.relHumidity}`}
-            %
+            <span translate='no'>{`${currentInfo.relHumidity}%`}</span>
           </span>
         </div>
         <div className='sideright--item'>
@@ -57,8 +54,7 @@ const WeatherContent = ({ currentInfo }) => {
           <span>
             Nubes -
             {' '}
-            {`${currentInfo.cloudiness}`}
-            %
+            <span translate='no'>{`${currentInfo.cloudiness}%`}</span>
           </span>
         </div>
       </div>
