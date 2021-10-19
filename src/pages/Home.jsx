@@ -11,8 +11,8 @@ import TodayWeather from '../components/TodayWeather';
 import ThisWeekWeather from '../components/ThisWeekWeather';
 import OtherCities from '../components/OtherCities';
 import Footer from '../components/Footer';
-import '../styles/Home.css';
 import SkeletonWeatherContent from '../components/SkeletonWeatherContent';
+import '../styles/Home.css';
 
 const Home = () => {
   const [city, setCity] = useState('');
@@ -56,16 +56,16 @@ const Home = () => {
     const citiesData = await getOtherCitiesInfo(); //Get Cities Info Weather
     setCitiesInfo(citiesData);
   }
-
   async function handleSearchCity(city) {
     const cities = await getListCities(city);
     setCities(cities);
     console.log(cities);
   }
-  //Notas
-  /* {
-    Object.keys(infoWeather).length > 0 ? 'infoWeather' : 'Cacio'
-  } */
+  function resetWeatherInfo() {
+    setCurrentInfo([]);
+    setThreeHourlyInfo([]);
+    setNext12Days([]);
+  }
 
   return (
     <div className='container'>
@@ -76,6 +76,7 @@ const Home = () => {
         setCity={setCity}
         handleSearchCity={handleSearchCity}
         handleGetInfoWeather={handleGetInfoWeather}
+        resetWeatherInfo={resetWeatherInfo}
       />
       {
         Object.keys(currentInfo).length > 0 ? <WeatherContent currentInfo={currentInfo} /> : <SkeletonWeatherContent />

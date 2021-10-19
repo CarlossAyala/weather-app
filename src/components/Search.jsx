@@ -5,7 +5,7 @@ import ResultSearch from './ResultSearch';
 import '../styles/Search.css';
 
 const Search = (props) => {
-  const { city, cities, setCity, handleSearchCity, handleGetInfoWeather } = props;
+  const { city, cities, setCity, handleSearchCity, handleGetInfoWeather, resetWeatherInfo } = props;
   const borderBottom = cities.length > 0 ? 'box-search border-bottom' : 'box-search';
   const resultSearch = document.querySelector('.result-search');
   const boxSearch = document.querySelector('.box-search');
@@ -33,7 +33,7 @@ const Search = (props) => {
         {/* <i className='box-search--icon theme bx bxs-sun' /> */}
       </div>
       {
-        cities.length > 0 && <ResultSearch cities={cities} handleGetInfoWeather={handleGetInfoWeather} />
+        cities.length > 0 && <ResultSearch resetWeatherInfo={resetWeatherInfo} cities={cities} handleGetInfoWeather={handleGetInfoWeather} />
       }
     </div>
   );

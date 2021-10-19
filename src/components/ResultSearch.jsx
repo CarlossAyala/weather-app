@@ -3,9 +3,11 @@ import React from 'react';
 import '../styles/ResultSearch.css';
 import { getInfoCityById } from '../utils/getInfoWeather';
 
-const ResultSearch = ({ cities, handleGetInfoWeather }) => {
+const ResultSearch = ({ resetWeatherInfo, cities, handleGetInfoWeather }) => {
 
   async function handleClickResultSearch(id) {
+    //Para que se vea el Skeleton Loader B)
+    resetWeatherInfo();
     //Ocultar resultados del Buscador
     const boxResult = document.querySelector('.result-search');
     const boxSearch = document.querySelector('.box-search');
