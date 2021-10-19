@@ -19,43 +19,23 @@ const WeatherContent = ({ currentInfo }) => {
       <div className='sideright'>
         <div className='sideright--item'>
           <i className='bx icon bxs-thermometer' />
-          <span>
-            Térmica -
-            {' '}
-            <span translate='no'>{`${currentInfo.feelsLikeTemp}°`}</span>
-          </span>
+          <span translate='no'>{`Térmica - ${currentInfo.feelsLikeTemp}° `}</span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-wind' />
-          <span>
-            Viento -
-            {' '}
-            <span translate='no'>{`${currentInfo.windSpeed}km/h`}</span>
-          </span>
+          <span translate='no'>{`Viento - ${currentInfo.windSpeed}km/h`}</span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-cloud-rain' />
-          <span>
-            Prob. Prec. -
-            {' '}
-            {`${currentInfo.precipProb}%`}
-          </span>
+          <span translate='no'>{`Prob. Prec. - ${currentInfo.precipProb}%`}</span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-water' />
-          <span>
-            Humedad -
-            {' '}
-            {`${currentInfo.relHumidity}%`}
-          </span>
+          <span translate='no'>{`Humedad - ${currentInfo.relHumidity}%`}</span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-cloud' />
-          <span>
-            Nubes -
-            {' '}
-            {`${currentInfo.cloudiness}%`}
-          </span>
+          <span translate='no'>{`Nubes - ${currentInfo.cloudiness}%`}</span>
         </div>
       </div>
     </div>

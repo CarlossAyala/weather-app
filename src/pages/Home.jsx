@@ -3,9 +3,7 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect } from 'react';
 import TitleApp from '../components/TitleApp';
-/* import MessageInfo from '../components/MessageInfo'; */
 import Search from '../components/Search';
-/* import WeatherMain from '../components/WeatherMain'; */
 import { getCurrentInfo, getDailyInfo, getListCities, getOtherCitiesInfo, getThreeHourlyInfo } from '../utils/getInfoWeather';
 import createJWT from '../utils/createJWT';
 import WeatherContent from '../components/WeatherContent';
@@ -14,6 +12,7 @@ import ThisWeekWeather from '../components/ThisWeekWeather';
 import OtherCities from '../components/OtherCities';
 import Footer from '../components/Footer';
 import '../styles/Home.css';
+import SkeletonWeatherContent from '../components/SkeletonWeatherContent';
 
 const Home = () => {
   const [city, setCity] = useState('');
@@ -79,7 +78,7 @@ const Home = () => {
         handleGetInfoWeather={handleGetInfoWeather}
       />
       {
-        Object.keys(currentInfo).length > 0 && <WeatherContent currentInfo={currentInfo} />
+        Object.keys(currentInfo).length > 0 ? <WeatherContent currentInfo={currentInfo} /> : <SkeletonWeatherContent />
       }
       <TodayWeather threeHourlyInfo={threeHourlyInfo} />
       <ThisWeekWeather next12Days={next12Days} />
