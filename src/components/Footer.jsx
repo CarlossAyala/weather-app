@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import '../styles/Footer.css';
 
@@ -13,13 +14,13 @@ const Footer = () => {
           <h3 className='title-3'>Follow Me</h3>
           <ul>
             <li>
-              <a href='http://' target='_blank' rel='noopener noreferrer'>
+              <a href='http://' target='_blank'>
                 <i className='bx bxl-github' />
                 GitHub
               </a>
             </li>
             <li>
-              <a href='http://' target='_blank' rel='noopener noreferrer'>
+              <a href='http://' target='_blank'>
                 <i className='bx bxl-twitter' />
                 Twitter
               </a>
@@ -30,12 +31,12 @@ const Footer = () => {
           <h3 className='title-3'>Project Resources</h3>
           <ul>
             <li>
-              <a href='https://developer.foreca.com/' target='_blank' rel='author noreferrer'>
+              <a href='https://developer.foreca.com/' target='_blank'>
                 API Weather
               </a>
             </li>
             <li>
-              <a href='https://haikei.app/' target='_blank' rel='author noreferrer'>
+              <a href='https://haikei.app/' target='_blank'>
                 Generate SVG Waves
               </a>
             </li>
@@ -43,7 +44,6 @@ const Footer = () => {
               <a
                 href='https://fonts.google.com/specimen/Quicksand?query=Quicksand#standard-styles'
                 target='_blank'
-                rel='author noreferrer'
               >
                 Font used
               </a>
@@ -52,7 +52,6 @@ const Footer = () => {
               <a
                 href='https://coolors.co/'
                 target='_blank'
-                rel='author noreferrer'
               >
                 Color Palette Generator
               </a>
