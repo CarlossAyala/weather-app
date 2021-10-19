@@ -5,7 +5,14 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "node ./scripts/create-env.js && webpack --mode production"
+    "build": "react-dotenv && webpack --mode production"
+  },
+  "react-dotenv": {
+    "whitelist": [
+    "LOCATION_API_KEY",
+    "USER_API_WEATHER",
+    "PASSWORD_API_WEATHER"
+    ]
   },
   "keywords": [],
   "author": "",
