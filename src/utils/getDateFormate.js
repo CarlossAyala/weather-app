@@ -47,7 +47,7 @@ export function dayNumberMonthString(date) {
 
   return `${dayNumber} ${monthName}`;
 }
-
+// Output expected --> 12:15 (Example)
 export const getHours = (date) => date.slice(11, 16);
 
 export function getTimeCurrent(date) {

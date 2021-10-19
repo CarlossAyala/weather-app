@@ -8,8 +8,7 @@ async function getJWT() {
 
   //Revisamos los valores de LocalStore
   if (localStorage.getItem('tokenW') === null) {
-    await createJWT();
-    getJWT();
+    tokenW = [];
   } else {
     tokenW = localStorage.getItem('tokenW');
   }
@@ -18,6 +17,10 @@ async function getJWT() {
 
 export async function getListCities(city) {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
@@ -40,6 +43,10 @@ export async function getListCities(city) {
 
 export async function getInfoCityById(id) {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
@@ -66,6 +73,10 @@ export async function getInfoCityById(id) {
 
 export async function getCurrentInfo({ lon, lat }) {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
@@ -94,6 +105,10 @@ export async function getCurrentInfo({ lon, lat }) {
 
 export async function getThreeHourlyInfo({ lon, lat }) {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
@@ -115,6 +130,10 @@ export async function getThreeHourlyInfo({ lon, lat }) {
 
 export async function getDailyInfo({ lon, lat }) {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
@@ -139,6 +158,10 @@ export async function getDailyInfo({ lon, lat }) {
 
 export async function getOtherCitiesInfo() {
   const token = await getJWT();
+  if (token === null) {
+    await createJWT();
+    await getJWT();
+  }
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
   const requestOptions = {
