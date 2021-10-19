@@ -1,40 +1,65 @@
 import React from 'react';
+import { getTimeCurrent } from '../utils/getDateFormate';
 import '../styles/WeatherContent.css';
 
-const WeatherContent = () => {
+const WeatherContent = ({ currentInfo }) => {
   return (
     <div className='box weather-main'>
-      <h2 className='title-2'>City</h2>
-      <span className='subtitle-1'>Lunes 10, 10:00</span>
-      <span className='infoclimate'>Clear</span>
+      <h2 className='title-2'>{currentInfo.city}</h2>
+      <span className='subtitle-1'>{getTimeCurrent(currentInfo.time)}</span>
+      <span className='infoclimate'>{currentInfo.symbolPhrase}</span>
       <div className='sideleft'>
         <img
           className='sideleft--img'
-          src='https://developer.foreca.com/static/images/symbols/d000.png'
-          alt='clear'
+          src={`https://developer.foreca.com/static/images/symbols/${currentInfo.symbol}.png`}
+          alt='Info Icon Weather'
         />
-        <span className='sideleft--temp'>20°</span>
+        <span className='sideleft--temp'>{`${currentInfo.temperature}°`}</span>
       </div>
       <div className='sideright'>
         <div className='sideright--item'>
           <i className='bx icon bxs-thermometer' />
-          <span>Térmica - 10°</span>
+          <span>
+            Térmica -
+            {' '}
+            {`${currentInfo.feelsLikeTemp}°`}
+          </span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-wind' />
-          <span>Viento - 10km/h</span>
+          <span>
+            Viento -
+            {' '}
+            {`${currentInfo.windSpeed}`}
+            km/h
+          </span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-cloud-rain' />
-          <span>Prob. Prec. - 10%</span>
+          <span>
+            Prob. Prec. -
+            {' '}
+            {`${currentInfo.precipProb}`}
+            %
+          </span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-water' />
-          <span>Humedad - 10%</span>
+          <span>
+            Humedad -
+            {' '}
+            {`${currentInfo.relHumidity}`}
+            %
+          </span>
         </div>
         <div className='sideright--item'>
           <i className='bx icon bx-cloud' />
-          <span>Nubes - 10%</span>
+          <span>
+            Nubes -
+            {' '}
+            {`${currentInfo.cloudiness}`}
+            %
+          </span>
         </div>
       </div>
     </div>

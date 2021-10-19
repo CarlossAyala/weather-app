@@ -1,10 +1,11 @@
 .footer {
   background-color: #10002b;
   color: #fff;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .footer--item {
   margin-bottom: 15px;
+  padding: 0 15px;
 }
 .footer--item:first-child {
   margin-top: 15px;
@@ -39,4 +40,7 @@
   color: #8d99ae;
   text-align: center;
   padding: 15px 0;
+}
+.footer .title-3 {
+  color: #fff;
 }

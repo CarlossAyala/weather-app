@@ -16,7 +16,7 @@ async function getJWT() {
   return tokenW;
 }
 
-export async function getInfoCities(city) {
+export async function getListCities(city) {
   const token = await getJWT();
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
@@ -34,11 +34,11 @@ export async function getInfoCities(city) {
 
     return dataCities.locations;
   } catch (error) {
-    return (error);
+    return error;
   }
 }
 
-export async function getInfoCity(id) {
+export async function getInfoCityById(id) {
   const token = await getJWT();
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
@@ -49,7 +49,7 @@ export async function getInfoCity(id) {
   };
 
   try {
-    //Información del la latitud y lingtud en base al nombre de la ciudad
+    //Información del la latitud y lingtud en base al id de la ciudad
     const requestDataCityInfo = `${BASE_URL}/api/v1/location/${id}&lang=es`;
     const resDataCity = await fetch(requestDataCityInfo, requestOptions);
     const dataCity = await resDataCity.json();
@@ -57,14 +57,14 @@ export async function getInfoCity(id) {
       lon: dataCity.lon,
       lat: dataCity.lat,
     };
+
     return location;
   } catch (error) {
-    return (error);
+    return error;
   }
 }
 
-//Solo se usa al principio de la apliación
-export async function getDailyAndCurrentData({ lon, lat }, setInfoWeather) {
+export async function getCurrentInfo({ lon, lat }) {
   const token = await getJWT();
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${token}`);
@@ -75,36 +75,113 @@ export async function getDailyAndCurrentData({ lon, lat }, setInfoWeather) {
   };
 
   try {
-    //Información del clima
-    const requestWeather = `${BASE_URL}/api/v1/current/${lon},${lat}&tempunit=C&windunit=KMH&lang=es`;
-    const resWeatherInfo = await fetch(requestWeather, requestOptions);
+    //Obtener Info Weather
+    const urlCurrentWeather = `${BASE_URL}/api/v1/current/${lon},${lat}&tempunit=C&windunit=KMH&lang=es`;
+    const resWeatherInfo = await fetch(urlCurrentWeather, requestOptions);
     const dataWeather = await resWeatherInfo.json();
-    //Información del clima en la semana
-    const requestWeatherDaily = `${BASE_URL}/api/v1/forecast/daily/${lon},${lat}&periods=7`;
-    const resWeatherInfoDaile = await fetch(requestWeatherDaily, requestOptions);
-    const dataWeatherDaily = await resWeatherInfoDaile.json();
+    //Obtener nombre de la Ciudad
+    const urlLocationInfo = `${BASE_URL}/api/v1/location/${lon},${lat}&lang=es`;
+    const resLocationrInfo = await fetch(urlLocationInfo, requestOptions);
+    const dataLocation = await resLocationrInfo.json();
+    //Se agrega el nombre de la Ciudad + País
+    dataWeather.current.city = `${dataLocation.name}, ${dataLocation.country}`;
 
-    //Información de la Ciudad
-    const requestCity = `${BASE_URL}/api/v1/location/${lon},${lat}&lang=en`;
-    const resCityInfo = await fetch(requestCity, requestOptions);
-    const dataCity = await resCityInfo.json();
-
-    const infoCountry = dataCity.timezone.split('/');
-
-    const data = {
-      codeImg: dataWeather.current.symbol,
-      temp: dataWeather.current.temperature,
-      climatePhrase: dataWeather.current.symbolPhrase,
-      feelsLike: dataWeather.current.feelsLikeTemp,
-      windSpeed: dataWeather.current.windSpeed,
-      precipProb: dataWeather.current.precipProb,
-      cloudiness: dataWeather.current.cloudiness,
-      ubication: `${dataCity.name} - ${dataCity.adminArea} - ${infoCountry[1]}`,
-      forecast: dataWeatherDaily.forecast,
-    };
-    setInfoWeather(data);
-
+    return dataWeather.current;
   } catch (error) {
-    return (error);
+    console.log(error);
+  }
+}
+
+export async function getThreeHourlyInfo({ lon, lat }) {
+  const token = await getJWT();
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${token}`);
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow',
+  };
+
+  try {
+    const urlThreeHourlyWeather = `${BASE_URL}/api/v1/forecast/3hourly/${lon},${lat}&periods=11&dataset=standard`;
+    const resWeatherInfo = await fetch(urlThreeHourlyWeather, requestOptions);
+    const dataWeather = await resWeatherInfo.json();
+
+    return dataWeather.forecast;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getDailyInfo({ lon, lat }) {
+  const token = await getJWT();
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${token}`);
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow',
+  };
+
+  try {
+    const urlDailyWeather = `${BASE_URL}/api/v1/forecast/daily/${lon},${lat}&periods=13`;
+    const resWeatherInfo = await fetch(urlDailyWeather, requestOptions);
+    const dataWeather = await resWeatherInfo.json();
+
+    //Elimina la fecha actual
+    dataWeather.forecast.shift();
+
+    return dataWeather.forecast;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getOtherCitiesInfo() {
+  const token = await getJWT();
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${token}`);
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow',
+  };
+
+  const cities = [
+    {
+      name: 'Nueva York, EE. UU.',
+      lon: -74.005973816,
+      lat: 40.714267731,
+      src: '../assets/bg-img-1.png',
+    },
+    {
+      name: 'Singapur, Singapur',
+      lon: 103.855834961,
+      lat: 1.293055654,
+      src: '../assets/bg-img-2.png',
+    },
+    {
+      name: 'Londres, Inglaterra',
+      lon: -0.125532746,
+      lat: 51.508415222,
+      src: '../assets/bg-img-3.png',
+    },
+  ];
+
+  try {
+    const infoWeatherCities = await Promise.all(
+      cities.map(async (city) => {
+        const urlCurrentWeather = `${BASE_URL}/api/v1/current/${city.lon},${city.lat}&lang=es`;
+        const resWeatherInfo = await fetch(urlCurrentWeather, requestOptions);
+        const dataWeather = await resWeatherInfo.json();
+        dataWeather.current.srcBg = `${city.src}`;
+        dataWeather.current.cityName = `${city.name}`;
+        return dataWeather;
+      }),
+    );
+
+    return infoWeatherCities;
+  } catch (error) {
+    console.log(error);
   }
 }

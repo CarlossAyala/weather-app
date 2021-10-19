@@ -4,7 +4,8 @@ import React from 'react';
 import ResultSearch from './ResultSearch';
 import '../styles/Search.css';
 
-const Search = ({ setInfoWeather, city, cities, setCity, handleSearchCity }) => {
+const Search = (props) => {
+  const { city, cities, setCity, handleSearchCity, handleGetInfoWeather } = props;
   const borderBottom = cities.length > 0 ? 'box-search border-bottom' : 'box-search';
   const resultSearch = document.querySelector('.result-search');
   const boxSearch = document.querySelector('.box-search');
@@ -32,7 +33,7 @@ const Search = ({ setInfoWeather, city, cities, setCity, handleSearchCity }) => 
         {/* <i className='box-search--icon theme bx bxs-sun' /> */}
       </div>
       {
-        cities.length > 0 ? <ResultSearch setInfoWeather={setInfoWeather} cities={cities} /> : null
+        cities.length > 0 && <ResultSearch cities={cities} handleGetInfoWeather={handleGetInfoWeather} />
       }
     </div>
   );

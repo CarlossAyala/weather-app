@@ -8,7 +8,7 @@ const Footer = () => {
   }
   return (
     <>
-      <div className='box footer'>
+      <div className='footer'>
         <div className='footer--item'>
           <h3 className='title-3'>Follow Me</h3>
           <ul>
@@ -59,13 +59,13 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className='msg-footer'>
-        Copyright &copy;
-        {' '}
-        {getFullYear()}
-        {' '}
-        Carlos Ayala. All Rights Reserved.
+        <div className='msg-footer'>
+          Copyright &copy;
+          {' '}
+          {getFullYear()}
+          {' '}
+          Carlos Ayala. All Rights Reserved.
+        </div>
       </div>
     </>
   );

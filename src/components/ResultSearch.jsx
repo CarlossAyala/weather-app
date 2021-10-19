@@ -1,19 +1,20 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import '../styles/ResultSearch.css';
-import { getDailyAndCurrentData, getInfoCity } from '../utils/getInfoWeather';
+import { getInfoCityById } from '../utils/getInfoWeather';
 
-const ResultSearch = ({ setInfoWeather, cities }) => {
+const ResultSearch = ({ cities, handleGetInfoWeather }) => {
 
   async function handleClickResultSearch(id) {
-    //Cosas del DOM
+    //Ocultar resultados del Buscador
     const boxResult = document.querySelector('.result-search');
     const boxSearch = document.querySelector('.box-search');
     boxResult.classList.add('hide-result');
     boxSearch.classList.remove('border-bottom');
 
-    const location = await getInfoCity(id);
-    getDailyAndCurrentData(location, setInfoWeather);
+    const location = await getInfoCityById(id);
+    //Buscar información actual, cada hora y semanal
+    handleGetInfoWeather(location);
   }
 
   return (

@@ -7,32 +7,30 @@
   "subtitle subtitle"
   "infoclimate infoclimate"
   "sideleft sideright";
-  column-gap: 20px;
+  color: #32325d;
 }
 .weather-main .title-2 {
   grid-area: title;
+  color: #32325d;
   font-size: 1.5em;
   margin-bottom: 0;
   font-weight: 500;
-  color: #32325d;
 }
 .weather-main .title-3 {
   grid-area: title;
   font-size: 1.5em;
   margin-bottom: 0;
   font-weight: 500;
-  color: #32325d;
 }
 .weather-main .subtitle-1 {
   grid-area: subtitle;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .weather-main .sideleft {
   grid-area: sideleft;
-  color: #32325d;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 .sideleft--img {
   width: 125px;
@@ -42,7 +40,6 @@
 }
 .weather-main .sideright {
   grid-area: sideright;
-  color: #32325d;
   display: grid;
   grid-template-areas: 
   "."
@@ -63,4 +60,5 @@
   text-align: center;
   margin-bottom: 10px;
   font-size: 1.5em;
+  text-transform: capitalize;
 }
