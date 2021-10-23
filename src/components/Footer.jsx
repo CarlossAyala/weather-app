@@ -12,16 +12,16 @@ const Footer = () => {
     <div className='footer'>
       <div className='box-footer-items'>
         <div className='footer--item'>
-          <h3 className='title-3'>Follow Me</h3>
+          <h3 className='title-3'>Síguime</h3>
           <ul>
             <li>
-              <a href='https://github.com/CarlossAyala' target='_blank'>
+              <a translate='no' href='https://github.com/CarlossAyala' target='_blank'>
                 <i className='bx bxl-github' />
                 GitHub
               </a>
             </li>
             <li>
-              <a href='https://twitter.com/carloss_ayala' target='_blank'>
+              <a translate='no' href='https://twitter.com/carloss_ayala' target='_blank'>
                 <i className='bx bxl-twitter' />
                 Twitter
               </a>
@@ -29,16 +29,16 @@ const Footer = () => {
           </ul>
         </div>
         <div className='footer--item'>
-          <h3 className='title-3'>Project Resources</h3>
+          <h3 className='title-3'>Recursos del Proyecto</h3>
           <ul>
             <li>
               <a href='https://developer.foreca.com/' target='_blank'>
-                API Weather
+                API del Clima
               </a>
             </li>
             <li>
-              <a href='https://haikei.app/' target='_blank'>
-                Generate SVG Waves
+              <a translate='no' href='https://haikei.app/' target='_blank'>
+                Generador de Ondas SVG
               </a>
             </li>
             <li>
@@ -46,7 +46,7 @@ const Footer = () => {
                 href='https://fonts.google.com/specimen/Quicksand?query=Quicksand#standard-styles'
                 target='_blank'
               >
-                Font used
+                Fuente utilizada
               </a>
             </li>
             <li>
@@ -54,7 +54,7 @@ const Footer = () => {
                 href='https://coolors.co/'
                 target='_blank'
               >
-                Color Palette Generator
+                Paletas de Colores
               </a>
             </li>
           </ul>

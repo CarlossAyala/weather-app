@@ -13,7 +13,7 @@ const NextDays = ({ next12Days }) => {
             next12Days.map((day, index) => (
               <div key={day.date} className='card-weather--item'>
                 <span className='card-weather--day'>{index === 0 ? 'Mañana' : getDayFormate(day.date) }</span>
-                <span className='card-weather--date'>{dayNumberMonthString(day.date)}</span>
+                <span translate='no' className='card-weather--date'>{dayNumberMonthString(day.date)}</span>
                 <img
                   className='card-weather--img'
                   src={`https://developer.foreca.com/static/images/symbols/${day.symbol}.png`}

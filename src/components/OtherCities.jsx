@@ -22,7 +22,7 @@ const OtherCities = ({ citiesInfo }) => {
                     <span className='box-cities-city--name'>{`${city.current.cityName}`}</span>
                     <span className='box-cities-city--time'>{`${getHours(city.current.time)}`}</span>
                   </div>
-                  <span className='box-cities-city--temp'>{`${city.current.temperature}°`}</span>
+                  <span translate='no' className='box-cities-city--temp'>{`${city.current.temperature}°`}</span>
                 </div>
               </div>
             )) :
