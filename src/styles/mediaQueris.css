@@ -1,0 +1,164 @@
+@media (min-width: 480px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+  }
+  .box-left, 
+  .box-right{
+    width: 100vw;
+  }
+  .box-right .title-2{
+    font-size: 1.7em;
+  }
+  .title-app .title-1 {
+    font-size: 2.8em;
+  }
+  .search .box-search {
+    font-size: 1.3em;
+  } 
+  .current-weather {
+    margin-bottom: 20px;
+  }
+  .current-weather .city {
+    font-size: 1.8em;
+  }
+  .current-weather .date {
+    font-size: 1.3em;
+  }
+  .text-info-weather span {
+    font-size: 1.8em;
+  }
+  .box-current-info .box-two {
+    font-size: 1.4em;
+  }
+  .box-current-info .box-two--item {
+    justify-content: center;
+  }
+  .card-weather--img {
+    width: 85px;
+  }
+  .card-weather--temp {
+    font-size: 1.6em;
+  }
+  .card-weather--time {
+    font-size: 1.4em;
+  }
+  .card-weather--day {
+    font-size: 1.4em;
+  }
+  .card-weather--date {
+    font-size: 1.3em;
+  }
+  .next-days-weather .card-weather--temp{
+    font-size: 1.4em;
+  }
+  .box-cities--item {
+    width: 350px
+  }
+  .footer--item .title-3{
+    font-size: 1.5em;
+  }
+  .footer--item a {
+    font-size: 1.2em;
+  }
+  .msg-footer{
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+  }
+  .box-left, 
+  .box-right{
+    width: 100vw;
+  }
+  .title-app .title-1 {
+    font-size: 2.5em;
+  }
+  .current-weather .city {
+    font-size: 1.5em;
+  }
+  .current-weather .date {
+    font-size: 1.2em;
+  }
+  .text-info-weather span {
+    font-size: 1.7em;
+  }
+  .box-current-info {
+    display: flex;
+  }
+  .box-current-info .box-two--item{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .box-title-section {
+    text-align: center;
+  }
+  .box-right .title-2{
+    font-size: 1.7em;
+  }
+  .box-other-cities {
+    flex-direction: column;
+  }
+  .box-cities--item {
+    width: 100%;
+  }
+
+  .search .box-search {
+    font-size: 1.2em;
+  } 
+  .current-weather {
+    margin-bottom: 20px;
+  }
+  .box-one,
+  .box-two {
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .box-current-info .box-two {
+    font-size: 1.4em;
+  }
+  .today-weather,
+  .next-days-weather,
+  .other-cities{
+    padding-right: 15px;
+  }
+  .card-weather--img {
+    width: 80px;
+  }
+  .card-weather--temp {
+    font-size: 1.6em;
+  }
+  .card-weather--time {
+    font-size: 1.4em;
+  }
+  .card-weather--day {
+    font-size: 1.4em;
+  }
+  .card-weather--date {
+    font-size: 1.3em;
+  }
+  .box-cities-city--name {
+    font-size: 1.4em;
+  }
+  .next-days-weather .card-weather--temp{
+    font-size: 1.4em;
+  }
+  .footer--item .title-3{
+    font-size: 1.5em;
+  }
+  .footer--item a {
+    font-size: 1.2em;
+  }
+  .msg-footer{
+    font-size: 1.2em;
+  }
+}

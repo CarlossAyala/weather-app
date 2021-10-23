@@ -1,0 +1,16 @@
+.next-days-weather {
+  padding-left: 15px;
+  padding-right: 5px;
+}
+.card-weather--day {
+  font-size: 1.2em;
+}
+.card-weather--date {
+  color: #ced4da;
+}
+.next-days-weather .card-weather--temp {
+  font-size: 1.2em;
+}
+.next-days-weather .card-weather--img {
+  margin: 3px 0;
+}

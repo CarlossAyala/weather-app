@@ -1,0 +1,53 @@
+.current-weather {
+  color: #32325d;
+}
+.box-info-city {
+  margin: 0 10px;
+}
+.current-weather .city {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+.current-weather .date {
+  color: #6c757d;
+}
+.text-info-weather {
+  text-align: center;
+  margin: 8px 0;
+}
+.text-info-weather span {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+.current-weather .box-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.box-one .box-one--img {
+  width: 150px;
+}
+.box-one .box-one--temp {
+  font-size: 3.5em;
+}
+.box-two {
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+.box-two:last-child{
+  justify-content: center;
+}
+.box-two--item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.box-two--item:last-child{
+  width: auto;
+}
+.box-two--item i {
+  margin-right: 3px;
+}

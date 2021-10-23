@@ -1,0 +1,26 @@
+.search {
+  margin: 10px 0;
+}
+.box-search {
+  border: 1px solid #889696;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px;
+  color: #889696;
+  border-radius: 8px;
+}
+.box-search i {
+  margin-right: 3px;
+}
+.box-search input {
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  color: #889696;
+}
+.border-bottom {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

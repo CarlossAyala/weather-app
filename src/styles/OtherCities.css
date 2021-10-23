@@ -1,0 +1,58 @@
+.other-cities {
+  margin: 10px 0;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+.box-other-cities {
+  display: flex;
+  column-gap: 10px;
+  overflow: auto;
+  padding-top: 15px;
+}
+.box-cities--item {
+  width: 400px;
+  height: 150px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  transition: transform 0.5s;
+}
+.box-cities--item:hover,
+.box-cities--item:active{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.box-cities--img {
+  width: 100%;
+  border-radius: 15px;
+  height: 150px;
+  object-fit: fill;
+  width: inherit;
+}
+.box-cities--info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  top: 8px;
+  padding: 0 10px;
+  color: #fff;
+  column-gap: 5px;
+}
+.box-cities--city {
+  display: flex;
+  flex-direction: column;
+}
+.box-cities-city--name {
+  font-size: 1.2em;
+}
+.box-cities-city--time {
+  color: #ced4da;
+  font-size: 1.1em;
+}
+.box-cities-city--temp {
+  font-size: 2.3em;
+  position: relative;
+  top: -5px;
+}

@@ -1,0 +1,57 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.box-left {
+  /* flex-grow: 1; */
+  width: 350px;
+  min-width: 350px;
+}
+.box-right {
+  flex-grow: 4;
+  background-color: #F4F1EB;
+  overflow: auto;
+  padding-top: 15px;
+}
+.box-right .box-title-section {
+  padding-left: 15px;
+}
+.box-right .title-section {
+  font-size: 2em;
+  font-weight: 600;
+}
+.box-right .box-card-weather{
+  display: flex;
+  column-gap: 10px;
+  align-items: stretch;
+  overflow: auto;
+  padding: 15px 0;
+}
+.box-right .card-weather--item {
+  background-color: #264653;
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.5s;
+}
+.box-right .card-weather--item:hover,
+.box-right .card-weather--item:active{
+  background-color: #197278;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.card-weather--img {
+  width: 80px;
+}
+.card-weather--temp {
+  font-size: 1.3em;
+}
+.card-weather--time {
+  font-size: 1.1em;
+}

@@ -5,11 +5,19 @@
   font-family: 'Quicksand', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
-html,
-body,
-#app{
-  height: 100%;
+#app {
+  overflow: hidden;
 }
+.title-1,
+.title-2,
+.title-3 {
+  margin: 0;
+}
+.title-2 {
+  font-weight: 500;
+}
+
+
 
 /*Scroll*/
 ::-webkit-scrollbar {
